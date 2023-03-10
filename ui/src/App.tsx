@@ -66,17 +66,9 @@ export default function PersistentDrawerLeft() {
 
   React.useEffect(() => {
     fetch('/api/v1/customers/all-with-children').then((json) => json.json()).then((resp) => {
-      const convertPadded = resp.map((cust: any) => ({
-        ...cust,
-        costs: cust.costs.map((cost: any) => ({
-          ...cost,
-          monthCode: cost.monthCode.toString().padStart(2, '0')
-        }))
-      }));
-
-      setCustomers(convertPadded);
-      setCurrentCustomer(convertPadded[0]);
-      setComplianceScore(convertPadded[0].complianceScores[0]);
+      setCustomers(resp);
+      setCurrentCustomer(resp[0]);
+      setComplianceScore(resp[0].complianceScores[0]);
     });
   }, []);
 
@@ -160,7 +152,7 @@ export default function PersistentDrawerLeft() {
         <DrawerHeader />
 
         <BarChart
-          titleText="Spending"
+          titleText="Spending in thousands, $"
           data={{
             labels: Object.keys(monthCodeTable).sort().map((mc: string) => monthCodeTable[mc]),
             datasets: [
