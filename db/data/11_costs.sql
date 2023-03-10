@@ -1,101 +1,90 @@
 -- Switch to using the `kion` database.
 USE kion;
 
-SET @ups_id = (SELECT id FROM customers WHERE name = 'NASA');
+SET @cmp_id = (SELECT id FROM customers WHERE name = 'NASA');
 
 -- Add some dummy records.
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  0,
-  50.1,
+  @cmp_id,
+  '00',
+  334.11,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  1,
-  22.3,
+  @cmp_id,
+  '01',
+  195.43,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  2,
-  7.3,
+  @cmp_id,
+  '02',
+  125.0,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  3,
-  39,
+  @cmp_id,
+  '03',
+  492.6,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  4,
-  6,
+  @cmp_id,
+  '04',
+  302.42,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  5,
-  8.2,
+  @cmp_id,
+  '05',
+  317.80,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  6,
-  2.5,
+  @cmp_id,
+  '06',
+  398.62,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  7,
-  1.5,
+  @cmp_id,
+  '07',
+  367.86,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  8,
-  8.5,
+  @cmp_id,
+  '08',
+  310.23,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  9,
-  7.5,
+  @cmp_id,
+  '09',
+  337.56,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  10,
-  6.5,
+  @cmp_id,
+  '10',
+  183.37,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
-
 INSERT INTO costs (customer_id, month_code, amount, created, updated) VALUES (
-  @ups_id,
-  11,
-  7.5,
+  @cmp_id,
+  '11',
+  395.54,
   UTC_TIMESTAMP(),
   UTC_TIMESTAMP()
 );
