@@ -5,7 +5,7 @@ USE kion;
 CREATE TABLE IF NOT EXISTS costs (
   id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   customer_id int NOT NULL,
-  month INTEGER NOT NULL,
+  month_code INTEGER NOT NULL,
   amount FLOAT NOT NULL,
   created DATETIME NOT NULL,
   updated DATETIME NOT NULL

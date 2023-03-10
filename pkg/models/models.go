@@ -12,7 +12,7 @@ type Customer struct {
     Name string `json:"name"`
 
     Costs            []*Cost            `json:"costs"`
-    ComplianceScores []*ComplianceScore `json:"complianceScore"`
+    ComplianceScores []*ComplianceScore `json:"complianceScores"`
 
     Created time.Time `json:"created"`
     Updated time.Time `json:"updated"`
@@ -21,7 +21,7 @@ type Customer struct {
 type Cost struct {
     ID         int       `json:"id"`
     CustomerID int       `json:"customerId"`
-    Month      int       `json:"month"`
+    MonthCode  int       `json:"monthCode"`
     Amount     float32   `json:"amount"`
     Created    time.Time `json:"created"`
     Updated    time.Time `json:"updated"`

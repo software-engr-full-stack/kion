@@ -93,7 +93,7 @@ func getCustomers(tx *sql.Tx) ([]*models.Customer, error) {
 
 func getCosts(tx *sql.Tx, custID int) ([]*models.Cost, error) {
     stmt := fmt.Sprintf( //nolint:gosec,G201
-        `SELECT id, customer_id, month, amount, created, updated FROM %s
+        `SELECT id, customer_id, month_code, amount, created, updated FROM %s
         WHERE customer_id = %d`,
         costsTableName,
         custID,
@@ -113,7 +113,7 @@ func getCosts(tx *sql.Tx, custID int) ([]*models.Cost, error) {
     costs := []*models.Cost{}
     for rows.Next() {
         rec := &models.Cost{}
-        err = rows.Scan(&rec.ID, &rec.CustomerID, &rec.Month, &rec.Amount, &rec.Created, &rec.Updated)
+        err = rows.Scan(&rec.ID, &rec.CustomerID, &rec.MonthCode, &rec.Amount, &rec.Created, &rec.Updated)
         if err != nil {
             return nil, err
         }
